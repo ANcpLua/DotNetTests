@@ -1,0 +1,28 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="ApiService/ApiService.csproj" />
+    <Project Path="AppHost/AppHost.csproj" />
+    <Project Path="ServiceDefaults/ServiceDefaults.csproj" />
+    <Project Path="WebApp/WebApp.csproj" />
+  </Folder>
+  <Folder Name="/tests/bunit/">
+    <Project Path="BUnit/BUnit.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tests/mstest/">
+    <Project Path="MSTest/MSTest.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tests/nunit/">
+    <Project Path="NUnit/NUnit.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tests/tunit/">
+    <Project Path="IntegrationTests/IntegrationTests.csproj" />
+    <Project Path="PlaywrightTests/PlaywrightTests.csproj" />
+    <Project Path="UnitTests/UnitTests.csproj" />
+  </Folder>
+  <Folder Name="/tests/xunit/">
+    <Project Path="XUnit/XUnit.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tests/xunitv3/">
+    <Project Path="XUnitV3/XUnitV3.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,66 @@
+## Build output
+bin/
+obj/
+out/
+[Bb]in/
+[Oo]bj/
+TestResults/
+
+## .NET tooling
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+
+## NuGet
+*.nupkg
+*.snupkg
+.nuget/packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+.config/dotnet-tools.json.bak
+
+## IDEs
+.vs/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+## OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+## Coverage
+*.coverage
+*.coveragexml
+coverage*.json
+coverage*.xml
+coverage*.info
+
+## User secrets and local config
+*.user.json
+appsettings.*.Local.json
+secrets.json
+.env
+.env.local
+
+## Playwright
+test-results/
+playwright-report/
+playwright/.cache/
+
+## Aspire
+aspire-manifest.json

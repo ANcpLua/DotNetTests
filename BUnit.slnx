@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="WebApp/WebApp.csproj" />
+    <Project Path="ServiceDefaults/ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="BUnit/BUnit.Tests.csproj" />
+  </Folder>
+</Solution>
