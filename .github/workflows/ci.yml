@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+jobs:
+  build:
+    name: Build solution
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet restore DotNetTests.slnx
+      - run: dotnet build DotNetTests.slnx --no-restore --configuration Release
+
+  test:
+    name: Test ${{ matrix.framework }}
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - framework: TUnit
+            project: UnitTests/UnitTests.csproj
+            runner: run
+          - framework: xUnit v2
+            project: XUnit/XUnit.Tests.csproj
+            runner: test
+          - framework: xUnit v3
+            project: XUnitV3/XUnitV3.Tests.csproj
+            runner: run
+          - framework: NUnit
+            project: NUnit/NUnit.Tests.csproj
+            runner: test
+          - framework: MSTest
+            project: MSTest/MSTest.Tests.csproj
+            runner: test
+          - framework: bUnit
+            project: BUnit/BUnit.Tests.csproj
+            runner: test
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '10.0.x'
+      - name: Restore
+        run: dotnet restore ${{ matrix.project }}
+      - name: Test (dotnet test)
+        if: matrix.runner == 'test'
+        run: dotnet test ${{ matrix.project }} --no-restore --configuration Release --logger "console;verbosity=normal"
+      - name: Test (dotnet run, Microsoft Testing Platform)
+        if: matrix.runner == 'run'
+        run: dotnet run --project ${{ matrix.project }} --no-restore --configuration Release

@@ -32,7 +32,7 @@ cd XUnitV3   && dotnet run    # xUnit v3
 ## Live app
 
 ```bash
-cd AppHost && dotnet run
+cd src/AppHost && dotnet run
 ```
 
 Open the Aspire dashboard URL printed in the console. Requires Docker (for Redis).
