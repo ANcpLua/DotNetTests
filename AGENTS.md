@@ -72,7 +72,7 @@ cd src/AppHost && dotnet run
 
 - `.github/workflows/ci.yml` builds the solution then matrix-tests each framework. IntegrationTests and PlaywrightTests are skipped in CI (Docker + Playwright browsers respectively — run them locally).
 - `.github/workflows/auto-merge.yml` enables native GitHub auto-merge for owner PRs, AI-agent branches (`claude/`, `copilot/`, `jules/`), and CodeRabbit-approved reviews. Branch protection on main requires CI to pass before the merge fires.
-- `renovate.json` extends the shared `O-ANcppLua/renovate-config` preset for dependency bumps.
+- `renovate.json` extends the shared `ANcpLua/renovate-config` preset for dependency bumps.
 
 ## Conventions in this repo
 
