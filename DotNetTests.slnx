@@ -5,6 +5,9 @@
     <Project Path="src/ServiceDefaults/ServiceDefaults.csproj" />
     <Project Path="src/WebApp/WebApp.csproj" />
   </Folder>
+  <Folder Name="/tests/advanced-patterns/">
+    <Project Path="AdvancedPatterns/AdvancedPatterns.Tests.csproj" />
+  </Folder>
   <Folder Name="/tests/bunit/">
     <Project Path="BUnit/BUnit.Tests.csproj" />
   </Folder>

@@ -21,16 +21,18 @@ XUnitV3/              xUnit v3 (Microsoft Testing Platform)
 NUnit/                NUnit 4 — constraint-based assertions
 MSTest/               MSTest 4 — Microsoft Testing Platform
 BUnit/                bUnit — renders Counter.razor without browser
+AdvancedPatterns/     xUnit v3 — reusable high-leverage test architecture patterns
 ```
 
 ## Solution files
 
-Seven `.slnx` files at root, scope from narrow to wide:
+Eight `.slnx` files at root, scope from narrow to wide:
 
 | File | Scope |
 | --- | --- |
 | `DotNetTests.slnx` | Master — all 12 projects, grouped by framework |
 | `TUnit.Playground.slnx` | TUnit stack + Aspire app — primary "live" entry point |
+| `AdvancedPatterns.slnx` | Advanced xUnit v3 test architecture pattern examples |
 | `BUnit.slnx` | BUnit + WebApp + ServiceDefaults |
 | `XUnit.slnx`, `XUnitV3.slnx`, `NUnit.slnx`, `MSTest.slnx` | Isolated single-framework slices |
 
@@ -49,6 +51,7 @@ dotnet test BUnit/BUnit.Tests.csproj --no-build
 # TUnit + xUnit v3 are exe-based (Microsoft Testing Platform)
 cd UnitTests && dotnet run --no-build
 cd XUnitV3 && dotnet run --no-build
+dotnet run --project AdvancedPatterns/AdvancedPatterns.Tests.csproj --no-build
 
 # Run the live app (Aspire dashboard at https://localhost:17xxx)
 cd src/AppHost && dotnet run

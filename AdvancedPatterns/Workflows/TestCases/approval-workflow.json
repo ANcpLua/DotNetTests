@@ -1,0 +1,16 @@
+{
+  "description": "Planner pauses for approval, then executor completes from checkpoint.",
+  "input": "ship",
+  "responses": [
+    "approved"
+  ],
+  "expectedEvents": [
+    "Started",
+    "Agent:planner",
+    "Request:approval",
+    "Response:approved",
+    "Agent:executor",
+    "Completed"
+  ],
+  "expectedOutput": "ship:approved"
+}

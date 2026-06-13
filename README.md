@@ -4,6 +4,8 @@ Six .NET test frameworks side-by-side, tested against the same code: a `Calculat
 
 Use this repo to read the same test written six different ways.
 
+`AdvancedPatterns/` is the extra study project: reusable contract tests, in-memory protocol hosts, deterministic call expectations, JSON workflow harnesses, and adversarial file-store tests.
+
 ## Frameworks
 
 | Folder | Package | Version |
@@ -14,6 +16,7 @@ Use this repo to read the same test written six different ways.
 | `NUnit/` | [NUnit 4](https://docs.nunit.org) | `4.6.0` |
 | `MSTest/` | [MSTest 4](https://learn.microsoft.com/dotnet/core/testing/unit-testing-mstest-intro) | `4.2.3` |
 | `BUnit/` | [bUnit](https://bunit.dev) | `2.7.2` |
+| `AdvancedPatterns/` | xUnit v3 + ASP.NET `TestServer` | `3.2.2` |
 
 ## Run
 
@@ -27,6 +30,7 @@ dotnet test BUnit/BUnit.Tests.csproj
 
 cd UnitTests && dotnet run    # TUnit
 cd XUnitV3   && dotnet run    # xUnit v3
+dotnet run --project AdvancedPatterns/AdvancedPatterns.Tests.csproj
 ```
 
 ## Live app
