@@ -30,7 +30,7 @@ Eight `.slnx` files at root, scope from narrow to wide:
 
 | File | Scope |
 | --- | --- |
-| `DotNetTests.slnx` | Master — all 12 projects, grouped by framework |
+| `DotNetTests.slnx` | Master — all 13 projects, grouped by framework |
 | `TUnit.Playground.slnx` | TUnit stack + Aspire app — primary "live" entry point |
 | `AdvancedPatterns.slnx` | Advanced xUnit v3 test architecture pattern examples |
 | `BUnit.slnx` | BUnit + WebApp + ServiceDefaults |
@@ -57,25 +57,23 @@ dotnet run --project AdvancedPatterns/AdvancedPatterns.Tests.csproj --no-build
 cd src/AppHost && dotnet run
 ```
 
-## Framework versions (verified against nuget.org)
+## Framework versions
 
-| Package | Version | Notes |
-| --- | --- | --- |
-| TUnit, TUnit.Aspire, TUnit.Playwright | `1.*` (floats latest) | Weekly releases |
-| xunit | `2.9.3` | v2.x stable line |
-| xunit.v3.mtp-v2 | `3.2.2` | v3 — runs on Microsoft Testing Platform |
-| NUnit | `4.6.0` | |
-| MSTest | `4.2.3` | |
-| bunit | `2.7.2` | Blazor component renderer |
-| Microsoft.NET.Test.Sdk | `18.5.1` | |
-| Aspire.Hosting.* | `13.3.3` | .NET 10 target |
-| coverlet.collector | `10.0.0` | |
+Renovate bumps pinned versions continuously — the csproj files are the source of truth.
+
+| Package | Notes |
+| --- | --- |
+| TUnit, TUnit.Aspire, TUnit.Playwright | Floating range — weekly releases |
+| xunit | v2.x stable line |
+| xunit.v3.mtp-v2 | v3 — runs on Microsoft Testing Platform |
+| bunit | Blazor component renderer |
+| Aspire.Hosting.* | .NET 10 target |
 
 ## CI and automation
 
-- `.github/workflows/ci.yml` builds the solution then matrix-tests each framework. IntegrationTests and PlaywrightTests are skipped in CI (Docker + Playwright browsers respectively — run them locally).
-- `.github/workflows/auto-merge.yml` enables native GitHub auto-merge for owner PRs, AI-agent branches (`claude/`, `copilot/`, `jules/`), and CodeRabbit-approved reviews. Branch protection on main requires CI to pass before the merge fires.
-- `renovate.json` extends the shared `ANcpLua/renovate-config` preset for dependency bumps.
+- `.github/workflows/ci.yml` builds the solution then matrix-tests the six framework projects. IntegrationTests, PlaywrightTests, and AdvancedPatterns are not in the test matrix (Docker / Playwright browsers — run them locally).
+- `.github/workflows/auto-merge.yml` (fleet-synced — do not hand-edit) enables native GitHub auto-merge for `codex/` and `copilot/` branches and Codex-connector-approved PRs. Branch protection on main requires CI to pass before the merge fires.
+- `renovate.json` extends the shared `github>ANcpLua/github-settings-automation` preset for dependency bumps.
 
 ## Conventions in this repo
 
