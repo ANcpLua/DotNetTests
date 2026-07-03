@@ -77,9 +77,9 @@ Renovate bumps pinned versions continuously — the csproj files are the source 
 
 ## Conventions in this repo
 
-- **Each framework project duplicates `Calculator` as `file class`** — intentional. Keeps each test project self-contained so syntax differences stand out. Don't extract to shared class library.
+- **XUnit, XUnitV3, NUnit, and MSTest each duplicate `Calculator` as a `file class`** (TUnit's lives in `UnitTests/Calculator.cs` as a public class) — intentional. Keeps each test project self-contained so syntax differences stand out. Don't extract to a shared class library.
 - **Project name ≠ NuGet package name** — csproj files use `.Tests` suffix (`XUnit.Tests.csproj` in folder `XUnit/`). Required: NuGet's NU1108 cycle detection treats matching names as self-references.
-- **Aspire `Projects.X` types** are generated from csproj filename (not folder path). Renaming a csproj breaks `src/AppHost/Program.cs` and `IntegrationTests/AppFixture.cs` — update both. The `src/` move did not change generated type names.
+- **Aspire `Projects.X` types** are generated from csproj filename (not folder path). Renaming a csproj breaks `src/AppHost/Program.cs` and `IntegrationTests/AppFixture.cs` — update both.
 - **Namespaces match folder, not csproj name** — `namespace XUnit.Tests` lives in `XUnit/XUnit.Tests.csproj`.
 - **PlaywrightTests** auto-installs browsers on first run via `Microsoft.Playwright.Program.Main(["install"])` in `Hooks.cs`.
 - **IntegrationTests** require Docker for Redis container (Aspire's `AddRedis("cache")`).
