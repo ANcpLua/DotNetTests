@@ -2,6 +2,13 @@
 
 Living reference comparing six .NET test frameworks (TUnit, xUnit, xUnit v3, NUnit, MSTest, bUnit) against the same surface area: a Calculator unit, an Aspire-orchestrated WebApp + ApiService, a Blazor Counter component.
 
+## Place in the 1.0.0 taxonomy: none
+
+This is a lab, not a qyl component. It appears in no row of the component
+taxonomy in `qyl-workspace/AGENTS.md`, ships no artifact, and is not part of the
+`Qyl.Telemetry.*` / `Qyl.Collector.*` rename. Do not apply the launch naming
+here and do not treat its packages as product surface.
+
 ## Repo layout
 
 Tests live at the repo root because they are the point. The system-under-test is hidden under `src/`.
