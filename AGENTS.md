@@ -5,7 +5,7 @@ Living reference comparing six .NET test frameworks (TUnit, xUnit, xUnit v3, NUn
 ## Place in the 1.0.0 taxonomy: none
 
 This is a lab, not a qyl component. It appears in no row of the component
-taxonomy in `qyl-workspace/AGENTS.md`, ships no artifact, and is not part of the
+taxonomy in `qyl/ARCHITECTURE-1.0.0.md`, ships no artifact, and is not part of the
 `Qyl.Telemetry.*` / `Qyl.Collector.*` rename. Do not apply the launch naming
 here and do not treat its packages as product surface.
 

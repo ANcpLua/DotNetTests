@@ -50,9 +50,9 @@ internal sealed class DeterministicWorkflow : IWorkflow
         Task.FromResult(new WorkflowRun(
             Events:
             [
-                new("Started"),
-                new("Agent:planner"),
-                new("Request:approval")
+                new WorkflowEvent("Started"),
+                new WorkflowEvent("Agent:planner"),
+                new WorkflowEvent("Request:approval")
             ],
             Checkpoint: new WorkflowCheckpoint(input),
             PendingRequest: "approval",
@@ -62,9 +62,9 @@ internal sealed class DeterministicWorkflow : IWorkflow
         Task.FromResult(new WorkflowRun(
             Events:
             [
-                new($"Response:{response}"),
-                new("Agent:executor"),
-                new("Completed")
+                new WorkflowEvent($"Response:{response}"),
+                new WorkflowEvent("Agent:executor"),
+                new WorkflowEvent("Completed")
             ],
             Checkpoint: checkpoint,
             PendingRequest: null,
