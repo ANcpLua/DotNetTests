@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace AdvancedPatterns.Workflows;
+namespace AdvancedPatterns.Tests.Workflows;
 
 public sealed class WorkflowHarnessTests
 {

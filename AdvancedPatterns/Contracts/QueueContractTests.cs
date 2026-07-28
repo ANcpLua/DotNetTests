@@ -1,4 +1,4 @@
-namespace AdvancedPatterns.Contracts;
+namespace AdvancedPatterns.Tests.Contracts;
 
 public interface IAsyncQueue
 {

@@ -1,4 +1,4 @@
-namespace AdvancedPatterns.ChatPipeline;
+namespace AdvancedPatterns.Tests.ChatPipeline;
 
 public sealed class ChatPipelineExpectationTests
 {

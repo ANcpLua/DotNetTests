@@ -1,14 +1,8 @@
 using System.Net;
-using System.Net.Http.Json;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Hosting.Server;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.TestHost;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
-namespace AdvancedPatterns.Protocol;
+namespace AdvancedPatterns.Tests.Protocol;
 
 public sealed class AgentProtocolTests
 {

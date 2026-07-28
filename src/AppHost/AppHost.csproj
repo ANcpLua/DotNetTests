@@ -15,10 +15,10 @@
     <PackageReference Include="Aspire.Hosting.AppHost" Version="13.4.6" />
     <PackageReference Include="Aspire.Hosting.Redis" Version="13.4.6" />
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\ApiService\ApiService.csproj" />
-    <ProjectReference Include="..\WebApp\WebApp.csproj" />
-  </ItemGroup>
-
+  
+   <ItemGroup>
+     <ProjectReference Include="..\ApiService\ApiService.csproj" />
+     <ProjectReference Include="..\WebApp\WebApp.csproj" />
+   </ItemGroup>
+  
 </Project>

@@ -1,4 +1,4 @@
-namespace AdvancedPatterns.Security;
+namespace AdvancedPatterns.Tests.Security;
 
 public sealed class SafeFileStoreTests
 {
